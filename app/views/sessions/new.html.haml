@@ -1,0 +1,11 @@
+=form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :method => :post, :html => {:class => "well"} do |f|
+  %label
+    Email
+  =f.text_field "email", :placeholder => "Enter your email"
+
+  %label
+    Password
+  =f.password_field "password", :placeholder => "Enter a password"
+
+  %button.btn(type="submit")
+    Submit

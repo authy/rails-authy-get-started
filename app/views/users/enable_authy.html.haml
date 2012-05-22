@@ -1,0 +1,16 @@
+=form_for current_user, :url => url_for(:controller => "users", :action => "register_authy"), :html => {:class => "well"} do |f|
+  %ul.unstyled
+    -@errors.each do |field, message|
+      %li
+        #{field}: #{message.join(", ")}
+
+  %label
+    Cellphone
+  =f.text_field "cellphone", :placeholder => "Enter your cellphone", :id => "authy-cellphone"
+
+  %label
+    Country
+  =f.text_field "country_code", :id => "authy-countries", :placeholder => "Enter you country"
+
+  %button.btn(type="submit")
+    Submit

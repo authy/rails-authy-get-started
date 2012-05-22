@@ -1,0 +1,11 @@
+-unless flash[:notice].blank?
+  .alert-message.info
+    = content_tag :div, flash[:notice]
+
+-unless flash[:error].blank?
+  .alert-message.error
+    = content_tag :div, flash[:error]
+
+- unless flash[:alert].blank?
+  .alert-message.warning
+    = content_tag :div, flash[:alert]
