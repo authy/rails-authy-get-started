@@ -1,11 +1,22 @@
-=form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :method => :post, :html => {:class => "well"} do |f|
-  %label
-    Email
-  =f.text_field "email", :placeholder => "Enter your email"
+.row
+  .span5.offset4
+    .well#login
+      .row.title
+        .span4.offset1
+          %h2
+            Authy Demo
 
-  %label
-    Password
-  =f.password_field "password", :placeholder => "Enter a password"
+      =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "form"}, :method => :post do |f|
+        %fieldset
+          .control-group
+            .controls
+              =f.text_field "email", :placeholder => "Enter your email"
 
-  %button.btn(type="submit")
-    Submit
+          .control-group
+            .controls
+              =f.password_field "password", :placeholder => "Enter a password"
+
+          .row
+            .span4
+              %button.submit-button.btn.btn-primary(type="submit")
+                Submit

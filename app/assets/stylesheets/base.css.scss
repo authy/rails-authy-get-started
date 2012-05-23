@@ -1,0 +1,50 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+
+#background1 {
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  height: 120%;
+  width: 120%;
+  z-index: -1;
+  pointer-events: none;
+  /* Opera does not support radial gradients in release as of december 2nd 2011 */
+  background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, 0) 1%, rgba(0, 42, 88, 0.15) 100%);
+  background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, 0) 1%, rgba(0, 42, 88, 0.15) 100%);
+}
+
+#background2 {
+  position: fixed;
+  width: 120%;
+  height: 50%;
+  z-index: 10;
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+}
+
+.submit-button {
+    width: 342px;
+    height: 44px;
+
+    background: #155fb0;
+    background-image: -webkit-linear-gradient(#558ed1, #155fb0);
+    background-image: -moz-linear-gradient(#558ed1, #155fb0);
+    background-image: -o-linear-gradient(#558ed1, #155fb0);
+    background-image: -ms-linear-gradient(#558ed1, #155fb0);
+    background-image: linear-gradient(#558ed1, #155fb0);
+}
+
+footer {
+    padding: 10px 0px;
+}
+

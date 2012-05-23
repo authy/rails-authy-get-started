@@ -1,2 +1,6 @@
-%h1
-  User #{current_user.email}
+.well
+  %h1
+    User #{current_user.email}
+
+  %a.btn.btn-warning(href="/sessions/logout")
+    logout

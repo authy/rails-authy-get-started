@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def new
+    if signed_in?
+      redirect_to current_user and return
+    end
     @user = User.new
   end
 
@@ -19,6 +22,10 @@ class SessionsController < ApplicationController
         redirect_to @user
       elsif flag == :two_factor
         session[:password] = params[:user][:password]
+
+        # send sms
+        Authy::API.request_sms(:id => @user.id)
+
         # go to second factor screen
         redirect_to url_for(:controller => "sessions", :action => "two_step", :email => @user.email)
       else

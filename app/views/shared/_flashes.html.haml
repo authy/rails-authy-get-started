@@ -1,11 +1,11 @@
 -unless flash[:notice].blank?
-  .alert-message.info
+  .alert.alert-success
     = content_tag :div, flash[:notice]
 
 -unless flash[:error].blank?
-  .alert-message.error
+  .alert.alert-error
     = content_tag :div, flash[:error]
 
 - unless flash[:alert].blank?
-  .alert-message.warning
+  .alert.alert-info
     = content_tag :div, flash[:alert]

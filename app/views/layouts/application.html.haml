@@ -13,25 +13,16 @@
 
     = yield(:head)
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          .nav-collapse.collapse
-            %ul.nav
-              -if !current_user
-                %li
-                  %a(href="/sessions/new")
-                    sign in
-              -else
-                %li
-                  %a(href="/sessions/logout")
-                    logout
-    .container
+    .container.main-container
+      #background1
+        #background2
       .content
         .page-header
         .row
           .span12
             = render :partial => 'shared/flashes'
-            = yield
+            =yield
         %footer
-          = render :partial => 'shared/footer'
+          .row
+            .span5.offset4
+              = render :partial => 'shared/footer'

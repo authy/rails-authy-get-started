@@ -1,10 +1,23 @@
-=form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "well"} do |f|
-  =f.hidden_field :email, :value => @email
-  =f.hidden_field :password, :value => @password
+.row
+  .span5.offset4
+    = render :partial => 'shared/flashes'
 
-  %label
-    Token
-  =f.text_field :token
+    .well#login
+      .row.title
+        .span4.offset1
+          %h2
+            Authy Demo
 
-  %button.btn(type="submit")
-    Submit
+      =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {} do |f|
+        %fieldset
+          =f.hidden_field :email, :value => @email
+          =f.hidden_field :password, :value => @password
+
+          .control-group
+            .controls
+              =f.text_field :token, :placeholder => "Authy Token"
+
+          .row
+            .span4
+              %button.submit-button.btn.btn-primary(type="submit")
+                Submit
