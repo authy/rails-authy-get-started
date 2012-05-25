@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def verify_token(token)
-    token = Authy::API.verify(:id => self.id, :token => token)
+    token = Authy::API.verify(:id => self.authy_id, :token => token)
 
     token.ok?
   end
