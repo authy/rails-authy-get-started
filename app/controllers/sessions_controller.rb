@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
         # go to second factor screen
         redirect_to url_for(:controller => "sessions", :action => "two_step", :email => @user.email)
       else
-        flash[:error] = "Wrong email or password."
+        flash[:error] = "wrong username, password or token."
         @user = User.new
         render 'new'
       end
