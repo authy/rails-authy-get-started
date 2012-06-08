@@ -1,16 +1,30 @@
-=form_for current_user, :url => url_for(:controller => "users", :action => "register_authy"), :html => {:class => "well"} do |f|
-  %ul.unstyled
-    -@errors.each do |field, message|
-      %li
-        #{field}: #{message.join(", ")}
+.row
+  .span5.offset4
+    .well.user-form
+      %h1 Enable Two-Factor Auth
+      =form_for current_user, :url => url_for(:controller => "users", :action => "register_authy") do |f|
+        -if @errors
+          #error_explanation
+          .alert.alert-error
+            %ul
+              -@errors.each do |field, message|
+                %li
+                  #{field}: #{message.join(", ")}
+        .input-row
+          .form-label
+            %label
+              Cellphone
+          .input
+            =f.text_field "cellphone", :placeholder => "Enter your cellphone", :id => "authy-cellphone"
 
-  %label
-    Cellphone
-  =f.text_field "cellphone", :placeholder => "Enter your cellphone", :id => "authy-cellphone"
-
-  %label
-    Country
-  =f.text_field "country_code", :id => "authy-countries", :placeholder => "Enter you country"
-
-  %button.btn(type="submit")
-    Submit
+        .input-row
+          .form-label
+            %label
+              Country
+          .input
+            =f.text_field "country_code", :id => "authy-countries", :placeholder => "Enter you country"
+        .input-row
+          .form-submit
+            %button.btn(type="submit")
+              Enable
+        .clear

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120522222654) do
 
   create_table "users", :force => true do |t|
-    t.string   "authy_id"
+    t.integer  "authy_id"
     t.string   "email"
     t.string   "password"
     t.datetime "created_at", :null => false

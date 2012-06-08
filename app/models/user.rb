@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :authy_id, :email, :password
-  attr_accessor :cellphone, :country_code, :token
+  attr_accessible :authy_id, :email, :password, :password_confirmation
+  attr_accessor :cellphone, :country_code, :token, :password_confirmation 
+  
+
+  validates_presence_of :email
+  validates_presence_of :password
+  validates_presence_of :password_confirmation
 
   def authenticate(password, token)
     return false if !self.correct_password?(password)

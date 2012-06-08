@@ -2,9 +2,13 @@
   .span5.offset4
     .well#login
       .row.title
-        .span4.offset1
-          %h2
-            Authy Demo
+        %h2
+          Authy Demo Site
+        %p 
+          Sign in below or click 
+          %span
+            =link_to "here", new_user_path 
+          to create an account 
 
       =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "form"}, :method => :post do |f|
         %fieldset
