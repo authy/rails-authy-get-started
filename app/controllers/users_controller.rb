@@ -1,7 +1,22 @@
 class UsersController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :only => :show
 
   def show
+  end
+  
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in(@user)
+      flash[:success] = "Thanks for registering. Enable two-factor on your user panel"
+      redirect_to enable_authy_users_path(@user)
+    else
+      render 'new'
+    end
   end
 
   def enable_authy

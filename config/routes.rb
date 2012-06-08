@@ -7,7 +7,7 @@ RailsGetStarted::Application.routes.draw do
       get :logout
     end
   end
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show, :new, :create] do
     collection do
       get :enable_authy
       put :register_authy
