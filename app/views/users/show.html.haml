@@ -1,7 +1,6 @@
-.well
-  - if current_user.authy_id == 0
-    = render "account_just_created"
-  - elsif current_user.authy_used == false
-    = render "logout_modal"
-  - else 
-    = render "demo_finished"
+- if current_user.authy_id == 0
+  = render "account_just_created"
+- elsif current_user.authy_used == false
+  = render "logout_modal"
+- else 
+  = render "demo_finished"

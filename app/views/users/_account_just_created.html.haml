@@ -1,18 +1,19 @@
-%p 
-  We've just created an account!
+.well
+  %p 
+    We've just created an account!
 
-%p
-  %strong
-    Username: 
-  #{current_user.email}
-  %br/
-  %strong
-    Password:
-  password
+  %p
+    %strong
+      Username: 
+    #{current_user.email}
+    %br/
+    %strong
+      Password:
+    password
 
 
-%p.instructions
-  Click
-  %span
-    Settings
-  above to add two-factor authentication.
+  %p.instructions
+    Click
+    %span
+      Settings
+    above to add two-factor authentication.
