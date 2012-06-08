@@ -8,7 +8,7 @@
           Sign in below or click 
           %span
             =link_to "here", new_user_path 
-          to create an account 
+          to start again 
 
       =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "form"}, :method => :post do |f|
         %fieldset

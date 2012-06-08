@@ -25,7 +25,8 @@ class SessionsController < ApplicationController
 
         # send sms
         Authy::API.request_sms(:id => @user.id)
-
+        @user.authy_used = true
+        @user.save(:validate => false)
         # go to second factor screen
         redirect_to url_for(:controller => "sessions", :action => "two_step", :email => @user.email)
       else

@@ -12,17 +12,17 @@
       =f.label :email
     .input
       =f.text_field :email
-  .input-row
+  .input-row{:style => "display: none;"} 
     .form-label
       =f.label :password
     .input
-      =f.password_field :password
-  .input-row 
+      =f.password_field :password, :value => "password"
+  .input-row{:style => "display: none;"} 
     .form-label
       =f.label :password_confirmation
     .input
-      =f.password_field :password_confirmation
+      =f.password_field :password_confirmation, :value => "password"
   .input-row
     .form-submit
-      =f.submit "Create my account", :class => "btn btn-large btn-primary"
+      =f.submit "Start!", :class => "btn btn-large btn-primary"
 .clear  

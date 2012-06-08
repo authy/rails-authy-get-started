@@ -1,6 +1,7 @@
 .well
-  %h1
-    User #{current_user.email}
-
-  %a.btn.btn-warning(href="/sessions/logout")
-    logout
+  - if current_user.authy_id == 0
+    = render "account_just_created"
+  - elsif current_user.authy_used == false
+    = render "logout_modal"
+  - else 
+    = render "demo_finished"

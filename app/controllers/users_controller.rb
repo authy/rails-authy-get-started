@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
   
   def new
+    sign_out
     @user = User.new
   end
 
@@ -12,8 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in(@user)
-      flash[:success] = "Thanks for registering. Enable two-factor on your user panel"
-      redirect_to enable_authy_users_path(@user)
+      redirect_to current_user
     else
       render 'new'
     end
@@ -29,7 +29,9 @@ class UsersController < ApplicationController
 
     if @authy_user.ok?
       current_user.authy_id = @authy_user.id
-      current_user.save
+      current_user.save(:validate => false)
+      flash[:modal] = "logout_modal"
+      redirect_to current_user
     else
       @errors = @authy_user.errors
       render 'enable_authy'

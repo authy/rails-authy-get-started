@@ -47,6 +47,21 @@ body {
   clear: both;
 }
 
+.header_menu{
+
+  text-align: right;
+  padding-right: 180px;
+  padding-top: 20px;
+  ul{
+    list-style: none;
+    li{
+      margin-left: 8px;
+      display: inline-block;
+    }
+  }
+
+}
+
 footer {
   text-align: center;
   padding-top: 15px;

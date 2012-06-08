@@ -1,0 +1,8 @@
+-if current_user
+  .header_menu
+    %ul
+      %li= link_to "Settings", settings_users_path(current_user) 
+      -if (current_user.authy_id != 0)
+        %li= link_to "Logout", logout_sessions_path 
+      -else
+        %li#fake_logout{:title => "Please enable two-factor in the setting menu before you log-out"}= "Logout"
