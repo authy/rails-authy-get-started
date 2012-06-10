@@ -3,7 +3,8 @@ RailsGetStarted::Application.routes.draw do
 
   resources :sessions do
     collection do
-      get :two_step
+      get :two_factor_auth
+      post :create_two_factor_auth
       get :logout
     end
   end

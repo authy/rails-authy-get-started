@@ -1,0 +1,19 @@
+.row
+  .span5.offset4
+    = render :partial => 'shared/flashes'
+
+    .well#login
+      .row.title
+        .span4.offset1
+          %h2
+            Enter you Token
+
+      =form_tag create_two_factor_auth_sessions_path, :method => "post" do 
+        %fieldset
+          .control-group
+            .controls
+              =text_field_tag :token, nil, :placeholder => "Enter your Authy Token", :id => "authy-token"
+          .row
+            .span4
+              %button.submit-button.btn.btn-primary(type="submit")
+                Submit

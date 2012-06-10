@@ -12,39 +12,42 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:user][:email])
 
-    if @user
-      result, flag = @user.authenticate(params[:user][:password], params[:user][:token])
+    if @user && @user.authenticate(params[:user][:password])
+      #username and password is correct
+      if(@user.authy_id != 0) #user is using two-factor
+        Authy::API.request_sms(:id => @user.id) #request the API to send and sms.
 
-      if result #auth succedded
-        sign_in @user
-        session[:password] = nil
-        flash[:notice] = "Successfully authenticated securely using Authy!"
-        redirect_to @user
-      elsif flag == :two_factor
-        session[:password] = params[:user][:password]
+        #Rails sessions are tamper proof. We can store the ID and that the password was already validated
+        session[:password_validated] = true 
+        session[:id] = @user.id
 
-        # send sms
-        Authy::API.request_sms(:id => @user.id)
-        @user.authy_used = true
-        @user.save(:validate => false)
-        # go to second factor screen
-        redirect_to url_for(:controller => "sessions", :action => "two_step", :email => @user.email)
+        
+        redirect_to url_for(:controller => "sessions", :action => "two_factor_auth")
       else
-        flash[:error] = "Wrong username, password or token."
-        @user = User.new
-        render 'new'
+        flash[:notice] = "Successfully authenticated without two-factor"
+        redirect_to @user
       end
     else
+      flash[:error] = "Wrong username, password."
       @user = User.new
       render 'new'
     end
   end
 
-  def two_step
-    @password = session[:password]
-    @email = params[:email]
-
-    @user = User.new
+  def two_factor_auth
+  end
+  
+  def create_two_factor_auth
+    @user = User.find(session[:id])
+    token = params[:token]
+    if @user && session[:password_validated] && @user.verify_token(token) 
+      sign_in(@user)
+      flash[:success] = "Securely signed in using Authy"
+      redirect_to @user
+    else
+      flash[:notice] = "Wrong token"
+      redirect_to new_session_path
+    end
   end
 
   def logout
