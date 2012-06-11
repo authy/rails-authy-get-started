@@ -42,17 +42,19 @@ class SessionsController < ApplicationController
     token = params[:token]
     if @user && session[:password_validated] && @user.verify_token(token) 
       sign_in(@user)
+      session[:password_validated] = nil
+      session[:id] = nil
       flash[:success] = "Securely signed in using Authy"
       redirect_to @user
     else
-      flash[:notice] = "Wrong token"
+      flash[:error] = "Wrong token"
       redirect_to new_session_path
     end
   end
 
   def logout
     sign_out
-    redirect_to root_path
+    redirect_to new_session_path
   end
 
 end
