@@ -20,10 +20,9 @@ class SessionsController < ApplicationController
         #Rails sessions are tamper proof. We can store the ID and that the password was already validated
         session[:password_validated] = true 
         session[:id] = @user.id
-
-        
         redirect_to url_for(:controller => "sessions", :action => "two_factor_auth")
       else
+        sign_in(@user)
         flash[:notice] = "Successfully authenticated without two-factor"
         redirect_to @user
       end
@@ -42,6 +41,8 @@ class SessionsController < ApplicationController
     token = params[:token]
     if @user && session[:password_validated] && @user.verify_token(token) 
       sign_in(@user)
+      @user.authy_used = true
+      @user.save(:validate => false)
       session[:password_validated] = nil
       session[:id] = nil
       flash[:success] = "Securely signed in using Authy"

@@ -12,7 +12,10 @@
  *= require_tree .
 */
 
-//=require "twitter/bootstrap"
+//=require  "twitter/bootstrap"
+//=require  "twitter/bootstrap-responsive"
 //=require "base"
 //=require "sessions"
 //=require "tipTip"
+
+

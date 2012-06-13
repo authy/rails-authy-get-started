@@ -1,23 +1,26 @@
 .modal_content
   .new-container-modal
-    %h2 Two factor now setup for your account.
+    %h2 Two factor is now setup for your account.
 
-    %p To try authy now, we are logging you out
+    %p So that you can try authy now, we are logging you out
     %p 
-      Log back in using the following credentials:
+      To log back in use the following credentials:
 
     %p
       %strong
         Username:
       = "#{current_user.email}"
+      %br/
       %strong
         Password:
-      password
+      = current_user.password
 
     %p
-      Make sure you download the Authy app if you have a Smartphone. We sent you a text
-      message with instruction on how to get the app. If you have a smartphone, we'll
+      Make sure you download the Authy app if you have a smartphone. We sent you a text
+      message with instruction on how to get the app. If you don't have a smartphone, we'll
       send you a text-message with the token when you are signin in.
-
-    =link_to "Got it, Log me out", logout_sessions_path
+    
+    .center
+      .btn.btn-large.btn-danger
+        %a{:href => logout_sessions_path} Got it, Log me out
 

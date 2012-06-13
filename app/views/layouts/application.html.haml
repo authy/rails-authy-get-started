@@ -15,14 +15,11 @@
   %body
     = render :partial => 'shared/header_menu'
     .container.main-container
-      #background1
-        #background2
       .content
-        .page-header
+        .header
         .row
-          .span12
-            = render :partial => 'shared/flashes'
-            =yield
+          = render :partial => 'shared/flashes'
+          =yield
         %footer
           .row
             = render :partial => 'shared/footer'

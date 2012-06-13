@@ -1,31 +1,10 @@
 body {
     -webkit-font-smoothing: antialiased;
-    background: #d9dfe4 url(/assets/background.png);
+    background-color: #f8f8f8 !important;
 }
 
-#background1 {
-  position: fixed;
-  top: -10%;
-  left: -10%;
-  height: 120%;
-  width: 120%;
-  z-index: -1;
-  pointer-events: none;
-  /* Opera does not support radial gradients in release as of december 2nd 2011 */
-  background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, 0) 1%, rgba(0, 42, 88, 0.15) 100%);
-  background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, rgba(255, 255, 255, 0) 1%, rgba(0, 42, 88, 0.15) 100%);
-}
-
-#background2 {
-  position: fixed;
-  width: 120%;
-  height: 50%;
-  z-index: 10;
-  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
-  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
-  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
-  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
-  background-image: linear-gradient(rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0));
+.container{
+  background-color: #f8f8f8;
 }
 
 .submit-button {
@@ -42,22 +21,35 @@ body {
 .clear {
   clear: both;
 }
-
-.header_menu{
-
-  text-align: right;
-  padding-right: 180px;
-  padding-top: 20px;
-  ul{
-    list-style: none;
-    li{
-      margin-left: 8px;
-      display: inline-block;
-    }
-  }
-
+.center{
+  text-align: center;
 }
 
+.bold{
+  font-weight: bold;
+}
+.header{
+
+  margin-top: 100px;
+}
+
+.header-menu{
+
+  float: right;
+  margin-right: 160px;
+}
+
+.btn{
+  a{
+    color: white;
+    font-weight: bold;
+  }
+  a:hover{
+    color: whiteSmoke;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
 footer {
   text-align: center;
   padding-top: 15px;

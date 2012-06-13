@@ -1,7 +1,7 @@
 .row
   .span5.offset4
     .well.user-form
-      %h1 Enable Two-Factor Auth
+      %h1 Enable 2-Factor Authentication
       =form_for current_user, :url => url_for(:controller => "users", :action => "register_authy") do |f|
         -if @errors
           #error_explanation
@@ -24,7 +24,7 @@
           .input
             =f.text_field "country_code", :id => "authy-countries", :placeholder => "Enter you country"
         .input-row
-          .start-button
-            %button.btn(type="submit")
+          .authy-button
+            %button.btn.btn-large.btn-success(type="submit")
               Enable
         .clear

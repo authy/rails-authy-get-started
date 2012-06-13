@@ -1,16 +1,12 @@
 .well
-  %p 
-    Congrates! You just logged in securely with Authy.
+  %h2.center 
+    Congrats! You just logged in securely with Authy.
 
   %p
     %strong
-      Add authy to your own website now: 
-      = link_to "Sign me up", "https://www.authy.com/signup"
-    %br/
-    %strong
-      Password:
-    password
-
+      You can now add Authy to your own website: 
+      %span.btn.btn-primary
+        = link_to "Sign up to Authy now!", "https://www.authy.com/signup"
 
   %p.instructions
     Read more about Authy on the

@@ -3,11 +3,10 @@
     = render :partial => 'shared/flashes'
 
     .well#login
-      .row.title
-        .span4.offset1
-          %h2
-            Enter you Token
-
+      .row.center
+        %h2
+          Token Verification
+      %br/
       =form_tag create_two_factor_auth_sessions_path, :method => "post" do 
         %fieldset
           .control-group

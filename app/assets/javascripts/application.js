@@ -14,6 +14,11 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require twitter/bootstrap
 //= require jquery.tipTip
+//= require users
+
+$(document).ready(function(){
+  $(".dropdown-toggle").dropdown()
+});
+

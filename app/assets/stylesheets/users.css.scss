@@ -9,6 +9,10 @@
     margin-bottom: 20px;
     font-size: 22px;
   }
+  p{
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
   .input-row{
     clear: both;
@@ -25,11 +29,20 @@
     float: right
   }
   .form-submit{
+    text-align:center;
     margin-top: 8px;
-    float: right
+    padding-top: 10px;
   }
   .start-button{
     text-align: center;
+    width: 220px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .authy-button{
+    float: right;
+    margin-top: 10px;
   }
 }
 

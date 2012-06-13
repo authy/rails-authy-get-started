@@ -11,7 +11,6 @@ RailsGetStarted::Application.routes.draw do
   resources :users, :only => [:show, :new, :create] do
     collection do
       get :enable_authy
-      get :settings
       put :register_authy
     end
   end
