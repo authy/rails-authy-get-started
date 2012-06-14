@@ -1,15 +1,17 @@
 .row
   .span5.offset4
     .well#login
-      .row.title
+      .title
         %h2
           Authy Demo Site
         %p 
           Sign in below or click 
           %span
             =link_to "here", new_user_path 
-          to start again 
-
+          if you don't have an account
+          %br/
+          %span.password-help
+            \-Note: your password is -> password
       =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "form"}, :method => :post do |f|
         %fieldset
           .control-group
@@ -20,7 +22,8 @@
             .controls
               =f.password_field "password", :placeholder => "Enter your password"
 
-          .row
-            .span4
+          
+          .row 
+            .span5
               %button.submit-button.btn.btn-primary(type="submit")
                 Submit

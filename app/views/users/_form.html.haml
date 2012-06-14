@@ -2,7 +2,7 @@
   -if @user.errors.any?
     #error_explanation
     .alert.alert-error
-      The for  contains #{pluralize(@user.errors.count, "error")}.
+      The form  contains #{pluralize(@user.errors.count, "error")}.
       %ul
         -@user.errors.full_messages.each do |msg|
           %li
