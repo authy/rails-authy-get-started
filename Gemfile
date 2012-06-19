@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 
 group :development do
+  gem 'pry'
   gem 'sqlite3'
 end
 

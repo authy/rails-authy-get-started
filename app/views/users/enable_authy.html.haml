@@ -9,7 +9,7 @@
             %ul
               -@errors.each do |field, message|
                 %li
-                  #{field}: #{message.join(", ")}
+                  = "#{field}: #{message}"
         .input-row
           .form-label
             %label
