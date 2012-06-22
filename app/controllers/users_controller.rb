@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => :show
+  before_filter :authenticate, :only => [:show, :enable_authy, :register_authy]
 
   def show
   end
