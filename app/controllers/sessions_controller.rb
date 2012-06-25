@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       #username and password is correct
       if(@user.authy_id != 0) #user is using two-factor
-        Authy::API.request_sms(:id => @user.id) #request the API to send and sms.
+        Authy::API.request_sms(:id => @user.authy_id) #request the API to send and sms.
 
         #Rails sessions are tamper proof. We can store the ID and that the password was already validated
         session[:password_validated] = true 
