@@ -2,36 +2,34 @@
   .title
     %h1 Welcome to the Authy Demo
     %p This demo will guide through the following 3 steps
-.steps 
-  .column
-    %h1 1
-    %h2 Create an account
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-      
-  .column
-    %h1 2
-    %h2 Enable two-factor auth
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  .column
-    %h1 3
-    %h2 Login using two-factor auth
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .steps 
+    .column
+      %h1 1
+      %h2 Create an account
+      %p
+        To simulate a user, we'll create an account for you on our demo site.
+        Please use your real e-mail as the Authy API requires a real e-mail
+        to function correctly. We will never SPAM you!.
+
+        
+    .column
+      %h1 2
+      %h2 Enable two-factor auth
+      %p
+        Once you have an account protected with username and password, we'll enable
+        two-factor authentication using the Authy API from the users settings page.
+        
+    .column
+      %h1 3
+      %h2 Login using two-factor auth
+      %p
+        After you've enabled two-factor authentication, we'll log you out so you can experience
+        using the Authy API to logon.
+        For this demo we decided to use 2 different view's during login, but the Authy API does not
+        impose any design decisions on you, so anything you saw during this demo you can change for your
+        own site.
+
+  .clear
+  .start-demo-button
+    = link_to "Start Demo", new_user_path

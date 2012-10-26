@@ -132,6 +132,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 3.2.3)
+  sass
   sass-rails (~> 3.2.3)
   sqlite3
   thin

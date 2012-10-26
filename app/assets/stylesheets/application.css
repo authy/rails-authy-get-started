@@ -1,5 +1,6 @@
 /*
 *= require       twitter/bootstrap
+*= require_tree  ./mixins
 *= require       base
 *= require       sessions
 *= require       tipTip

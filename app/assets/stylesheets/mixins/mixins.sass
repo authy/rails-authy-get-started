@@ -1,0 +1,83 @@
+
+@mixin rounded($radius: 5px)
+  -moz-border-radius: $radius
+  -khtml-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius
+
+@mixin rounded-top($radius: 5px)
+  -moz-border-radius-topleft: $radius
+  -khtml-border-radius-topleft: $radius
+  -webkit-border-top-left-radius: $radius
+  border-radius-topleft: $radius
+  border-top-left-radius: $radius
+
+  -moz-border-radius-topright: $radius
+  -khtml-border-radius-topight: $radius
+  -webkit-border-top-right-radius: $radius
+  border-radius-topright: $radius
+  border-top-right-radius: $radius
+
+
+
+@mixin rounded-bottom($radius: 5px)
+  -moz-border-radius-bottomleft: $radius
+  -khtml-border-radius-bottomleft: $radius
+  -webkit-border-bottom-left-radius: $radius
+  border-radius-bottomleft: $radius
+  border-bottom-left-radius: $radius
+
+  -moz-border-radius-bottomright: $radius
+  -khtml-border-radius-bottomright: $radius
+  -webkit-border-bottom-right-radius: $radius
+  border-radius-bottomright: $radius
+  border-bottom-right-radius: $radius
+
+@mixin shadow($color, $x: 0, $y: 0px, $width: 10px)
+  -moz-box-shadow: $x $y $width $color
+  -webkit-box-shadow: $x $y $width $color
+  box-shadow: $x $y $width $color
+
+@mixin gradient-background($image_path)
+  background-image: url($image_path)
+  background-repeat: repeat-x 
+
+
+//Makes the image square with rounded corners
+@mixin square-image($size: 48px, $shadow-size: 5px)
+  @include rounded(5px)
+  width: $size
+  height: $size
+  box-shadow: 0 0 $shadow-size rgba(0, 0, 0, .8)  
+  background: url(http://www.gravatar.com/avatar/e83b38029ee4962c56737a9b977905b3?s=#{$size + 10}) no-repeat
+  
+
+
+//Generates a circular image of a given size with a shadow
+//around. 
+@mixin circular-image($size: 48px, $shadow-size: 5px)
+  width: $size
+  height: $size
+  border-radius: 150px
+  -webkit-border-radius: 150px
+  -moz-border-radius: 150px
+  box-shadow: 0 0 $shadow-size rgba(0, 0, 0, .8)
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8)
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8)
+  background: url(http://www.gravatar.com/avatar/e83b38029ee4962c56737a9b977905b3?s=#{$size + 10}) no-repeat
+
+@mixin circle($size: 8px)
+  width: $size
+  height: $size
+  border-radius: 150px
+  -webkit-border-radius: 150px
+  -moz-border-radius: 150px
+
+
+//Truncastes the string with ... at a given width
+@mixin truncated($max-width: 80px)
+  display: inline-block
+  max-width: $max-width
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
