@@ -2,44 +2,58 @@
   .title {
     h1 {
       font-family: "proxima-nova", arial, sans-serif;
-      font-size: 40px;
+      font-size: 50px;
       text-align: center;
       color: #222; 
       font-weight: bold;
       -webkit-text-fill-color: transparent;
       background: -webkit-linear-gradient(black, #222);
       -webkit-background-clip: text, border;
-      line-height: 50px;
+      line-height: 66px;
 
     }
     p {
      text-align: center;
      font-size: 23px;
-     color: #008CDD; 
+     color: #222; 
      line-height: 25px;
     }
   }
 }
 
 .steps {
-  padding-left: 50px;
-  margin-top: 40px; 
+  padding-left: 30px;
+  margin-top: 60px; 
 
   .column{
     float: left;
     width: 280px;
     padding-left: 15px;
     h1{
+      background-image: url("/assets/images/circle-black.png");
+      background-position: -3px 1px;
       float: left;
-      color: darkorange;
-      margin: 2px 13px 0 0;
-      font-size: 50px;
+      color: #333;
+      margin: -9px 7px 0 0;
+      font-size: 36px;
+      letter-spacing: 15px;
+      width: 32px;
+      padding: 15px;
+      padding-left: 23px;
 
     }
 
     h2{
       line-height: 20px;
       font-size: 18px;
+      color: black;
+    }
+
+    p {
+      margin-top: 5px;
+      color: gray;
+      margin-left: 77px;
+
     }
   }
 }
