@@ -1,0 +1,45 @@
+.welcome {
+  .title {
+    h1 {
+      font-family: "proxima-nova", arial, sans-serif;
+      font-size: 40px;
+      text-align: center;
+      color: #222; 
+      font-weight: bold;
+      -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(black, #222);
+      -webkit-background-clip: text, border;
+      line-height: 50px;
+
+    }
+    p {
+     text-align: center;
+     font-size: 23px;
+     color: #008CDD; 
+     line-height: 25px;
+    }
+  }
+}
+
+.steps {
+  padding-left: 50px;
+  margin-top: 40px; 
+
+  .column{
+    float: left;
+    width: 280px;
+    padding-left: 15px;
+    h1{
+      float: left;
+      color: darkorange;
+      margin: 2px 13px 0 0;
+      font-size: 50px;
+
+    }
+
+    h2{
+      line-height: 20px;
+      font-size: 18px;
+    }
+  }
+}

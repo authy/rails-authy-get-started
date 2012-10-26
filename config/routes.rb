@@ -15,5 +15,6 @@ RailsGetStarted::Application.routes.draw do
     end
   end
 
-  root :to => "users#new"
+  
+  root :to => "pages#welcome"
 end
