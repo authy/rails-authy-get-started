@@ -1,0 +1,102 @@
+@import mixins/mixins
+@import classes/forms
+
+.new-user 
+  text-align: center
+  margin-top: 15%
+  .form
+    @extend .form-class
+
+.account-just-created
+  border: 2px solid black
+  padding: 20px
+  width: 650px
+  text-align: center
+  margin: 0 auto
+  height: 25em
+  @include rounded(8px)
+
+  .content
+    h1
+      font-size: 20pt
+      color: black
+      font-weight: bold
+      letter-spacing: 1.5px
+      text-transform: uppercase
+    p
+      margin-top: 20px
+      font-size: 11pt
+      color: #333
+      
+.enable-two-factor
+  text-align: center
+  margin-top: 5%  
+  .form
+    h1
+      font-size: 22pt !important
+      margin-bottom: 30px !important
+
+    @extend .form-class
+
+
+  
+.logout-modal
+  width: 600px
+  background: #fff
+  box-shadow: 0px 1px 4px  #CCC
+  border: 1px solid #CCC
+  border-radius: 4px
+  padding: 20px
+  margin: 8% auto
+
+  .content
+    h4
+      color: red
+      font-size: 12pt
+      letter-spacing: 1.5px
+  
+
+.account_info
+  text-align: left
+  padding-left: 35%
+
+.demo-finished
+  border: 2px solid black
+  padding: 20px
+  width: 650px
+  text-align: center
+  margin: 0 auto
+  height: 25em
+  @include rounded(8px)
+
+  .content
+    display: inline-block
+
+    h1
+      color: black
+
+    .sign-up
+      color: #222
+      font-size: 13pt
+      text-align: left
+      font-weight: bold
+
+    .button
+      display: inline-block
+      margin: 40px 0
+
+      a
+        width: 180px
+        @include rounded(8px)
+        border: 2px solid black
+        padding: 10px 15px
+
+
+        font-size: 22px
+        font-weight: bold
+        color: black
+
+        &:hover
+          color: white
+          background: #222
+          text-decoration: none

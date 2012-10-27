@@ -1,30 +1,22 @@
-.row
-  .span5.offset4
-    .well.user-form
-      %h1 Enable 2-Factor Authentication
-      =form_for current_user, :url => url_for(:controller => "users", :action => "register_authy") do |f|
-        -if @errors
-          #error_explanation
-          .alert.alert-error
-            %ul
-              -@errors.each do |field, message|
-                %li
-                  = "#{field}: #{message}"
-        .input-row
-          .form-label
-            %label
-              Cellphone
-          .input
-            =f.text_field "cellphone", :placeholder => "Enter your cellphone", :id => "authy-cellphone"
+.enable-two-factor
+  .form
+    %h1.center Two-Factor Authentication
+    =form_for current_user, :url => url_for(:controller => "users", :action => "register_authy") do |f|
+      -if @errors
+        #error_explanation
+        .flash.error
+          %ul
+            -@errors.each do |field, message|
+              %li
+                = "#{field}: #{message}"
+      .input-row
+        %label Country
+        =f.text_field "country_code", :id => "authy-countries"
+      .input-row
+        %label Cellphone
+        =f.text_field "cellphone", :id => "authy-cellphone"
 
-        .input-row
-          .form-label
-            %label
-              Country
-          .input
-            =f.text_field "country_code", :id => "authy-countries", :placeholder => "Enter you country"
-        .input-row
-          .authy-button
-            %button.btn.btn-large.btn-success(type="submit")
-              Enable
-        .clear
+      .button-row
+        %button(type="submit")
+          Enable
+      .clear

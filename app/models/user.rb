@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :authy_id, :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation
   attr_accessor :cellphone, :country_code, :token, :password_confirmation 
   
 

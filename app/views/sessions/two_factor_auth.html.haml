@@ -1,18 +1,16 @@
-.row
-  .span5.offset4
-    = render :partial => 'shared/flashes'
+.two-factor
+  .form
+    =render :partial => 'shared/flashes'
+    %h2.center
+      Token Verification
+    %p.center
+      Use your cellphone to get the token
+    =form_tag create_two_factor_auth_sessions_path, :method => "post" do 
+      .input-row
+        %label
+          TOKEN
+        =text_field_tag :token, nil, :id => "authy-token"
+      .button-row
+        %button(type="submit")
+          Login
 
-    .well#login
-      .row.center
-        %h2
-          Token Verification
-      %br/
-      =form_tag create_two_factor_auth_sessions_path, :method => "post" do 
-        %fieldset
-          .control-group
-            .controls
-              =text_field_tag :token, nil, :placeholder => "Enter your Authy Token", :id => "authy-token"
-          .row
-            .span4
-              %button.submit-button.btn.btn-primary(type="submit")
-                Submit

@@ -1,3 +1,5 @@
+@import mixins/mixins
+
 body 
   -webkit-font-smoothing: antialiased
   background-color: white !important
@@ -36,8 +38,63 @@ body
     text-decoration: none
     font-weight: bold
 
+.header-menu
+  a
+    color: black
+    letter-spacing: 1.5px
+    font-size: 12pt
+    font-weight: 900
+    font-family: "Proxima Nova", "Helvetica Neue", serif
+    
+    &:hover
+      background-color: black !important
+      color: white
+
+.caret
+  border-top-color: black !important
+  border-bottom-color: black !important
+  
 footer 
   text-align: center
   padding-top: 15px
 
+.flash
+  &.error
+    border: 2px dashed red
+    padding: 15px
+    margin: 15px 0
+    color: black
+    font-weight: bold
+    letter-spacing: 2px
 
+.alert
+  background-color: white 
+  color: black
+  font-size: 12pt
+  font-weight: bold
+  letter-spacing: 2px
+  @include rounded(8px)
+  padding: 10px
+  text-align: center
+
+.alert-success
+  border: 3px solid green !important
+
+.alert-error
+  border: 3px solid red !important
+
+.alert-info
+  border: 3px solid yellow !important
+
+
+#authy-token
+  width: 167px
+  background: url('images/icon.png') no-repeat 212px center !important
+  background-color: white !important
+  border: 1px dashed black !important
+  padding: 3px 0 3px 71px !important
+
+#authy-cellphone
+  background-color: white !important
+  border: 1px dashed black !important
+  letter-spacing: 2px

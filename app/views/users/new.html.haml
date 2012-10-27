@@ -1,16 +1,13 @@
-.row
-  .span6.offset3
-    .well.user-form
-      %p
-        .center.bold
-          To get started enter your e-mail. 
-        To simulate an existing user, we'll automatically create an acccount and log you in,
-        as if you we're an existing user.
-        %br/
-        Click 
-        %span
-          = link_to "here", new_session_path
-        if you already have an account
-      =render "form"
+.new-user
+  .form
+    %h1.center Create new user
+    %p.center
+      Please enter your real e-mail, we'll never SPAM you!
+      %br/
+      Click 
+      %span
+        = link_to "here", new_session_path
+      if you already have an account
+    =render "form"
 
 

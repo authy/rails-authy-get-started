@@ -1,15 +1,17 @@
-.well
-  %h2.center 
-    Congrats! You just logged in securely with Authy.
-  %br/
-  %br/
-  %p
-    %strong
-      You can now add Authy to your own website: 
-      %span.btn.btn-primary
-        = link_to "Sign up to Authy now!", "https://www.authy.com/signup"
+.demo-finished
+  .content
+    %h1.center 
+      You just logged in securely with Authy
+    %br/
+    %br/
+    %p.sign-up
+      You can now add two-factor authentication to your own website or app 
+      %br/
+    
+    .button.center
+      = link_to "Sign up to Authy now!", "https://www.authy.com/signup"
 
-  %p.instructions
-    Read more about Authy on the
-    %span
-      =link_to "Getting Started page", "https://www.authy.com/help/getting-started"
+    %p.instructions
+      Read more about Authy on the
+      %span
+        =link_to "Getting Started page", "https://www.authy.com/help/getting-started"

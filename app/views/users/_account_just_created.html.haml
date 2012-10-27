@@ -1,20 +1,10 @@
-.well.span8.offset2
-  .center
-    %h2 
-      We've just created an account!
+.account-just-created
+  .content
+    %h1 
+      Hello #{current_user.email.split("@")[0]}
     %br/
-    %p.account_info
-      %strong
-        Username: 
-      #{current_user.email}
-      %br/
-      %strong
-        Password:
-      password
+    %p 
+      This page simulates your users main page. 
+    %p  
+      On the settings menu you will be able to enable two-factor authentication.
 
-
-    %p.instructions
-      Click
-      %span
-        Settings
-      above to add two-factor authentication.

@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
         redirect_to @user
       end
     else
-      flash[:error] = "Wrong username, password."
+      flash[:error] = "Wrong username or password."
       @user = User.new
       render 'new'
     end

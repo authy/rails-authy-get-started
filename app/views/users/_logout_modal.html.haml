@@ -1,25 +1,13 @@
-.modal_content
-  .new-container-modal
-    %h2 Two factor is now setup for your account.
-
-    %p So that you can try authy now, we are logging you out
-    %p 
-      To log back in use the following credentials:
-
-    %p
-      %strong
-        Username:
-      = "#{current_user.email}"
+.logout-modal
+  .content
+    %h1.center Two factor enabled
+    %br/
+    %h4 
+      1. Install Authy app: www.authy.com/install (On your phone browser) 
       %br/
-      %strong
-        Password:
-      = current_user.password
 
-    %p
-      Make sure you download the Authy app if you have a smartphone. We sent you a text
-      message with instruction on how to get the app. If you don't have a smartphone, we'll
-      send you a text-message with the token when you are signin in.
-    
+    %br/
+    %br/
     .center
       .btn.btn-large.btn-danger
         %a{:href => logout_sessions_path} Got it, Log me out

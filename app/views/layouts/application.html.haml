@@ -5,7 +5,9 @@
       = content_for?(:title) ? yield(:title) : "Authy Demo"
 
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag "https://www.authy.com/form.authy.min.css"
     = javascript_include_tag "application"
+    = javascript_include_tag "https://www.authy.com/form.authy.min.js"
 
     = csrf_meta_tag
 

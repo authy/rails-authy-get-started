@@ -1,29 +1,19 @@
-.row
-  .span5.offset4
-    .well#login
-      .title
-        %h2
-          Authy Demo Site
-        %p 
-          Sign in below or click 
-          %span
-            =link_to "here", new_user_path 
-          if you don't have an account
-          %br/
-          %span.password-help
-            \-Note: your password is -> password
-      =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :html => {:class => "form"}, :method => :post do |f|
-        %fieldset
-          .control-group
-            .controls
-              =f.text_field "email", :placeholder => "Enter your email"
-
-          .control-group
-            .controls
-              =f.password_field "password", :placeholder => "Enter your password"
-
-          
-          .row 
-            .span5
-              %button.submit-button.btn.btn-primary(type="submit")
-                Submit
+.new-session
+  .form
+    %h2.center Login
+    %p.center 
+      Sign in below or click 
+      %span
+        =link_to "here", new_user_path 
+      if you don't have an account
+      %br/
+    =form_for @user, :url => url_for(:controller => "sessions", :action => "create"), :method => :post do |f|
+      .input-row
+        =f.label :email
+        =f.text_field "email"
+      .input-row
+        =f.label :password
+        =f.password_field "password"
+      .button-row 
+        %button(type="submit")
+          Login

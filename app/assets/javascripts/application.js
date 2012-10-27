@@ -17,7 +17,6 @@
 //= require twitter/bootstrap
 //= require jquery.tipTip
 //= require users
-//= require_tree ./authy
 
 $(document).ready(function(){
   $(".dropdown-toggle").dropdown()
