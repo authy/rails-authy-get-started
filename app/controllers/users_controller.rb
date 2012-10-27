@@ -26,7 +26,6 @@ class UsersController < ApplicationController
     @authy_user = Authy::API.register_user(:email => current_user.email,
                                            :cellphone => params[:user][:cellphone],
                                            :country_code => params[:user][:country_code])
-
     if @authy_user.ok?
       current_user.authy_id = @authy_user.id
       current_user.save(:validate => false)
